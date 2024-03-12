@@ -1,0 +1,37 @@
+﻿<Window x:Class="Tsirk.ActorProfile"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tsirk"
+        mc:Ignorable="d"
+        Title="ActorProfile" Height="400" Width="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition></RowDefinition>
+
+        </Grid.RowDefinitions>
+        <Label Content="Добавить вальер" Grid.Row="0" HorizontalAlignment="Center"></Label>
+        <Grid  Grid.Row="1" Margin="60,30">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Content="Добавить" Grid.Column="0"></Label>
+            <DatePicker  Grid.Column="1" Name="date"></DatePicker>
+            <Button Content="Добавить" Background="Azure" Grid.Column="2" BorderThickness="1" BorderBrush="Aquamarine" Name="add" Click="add_Click" ></Button>
+        </Grid>
+        <ListView Name="times_list" Width="130" Height="100" Margin="100,10" FontSize="12" Grid.Row="2">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=id}" Width="0">id</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=date}"  Width="120">Дата</GridViewColumn>
+                </GridView>
+            </ListView.View>
+
+        </ListView>
+    </Grid>
+</Window>

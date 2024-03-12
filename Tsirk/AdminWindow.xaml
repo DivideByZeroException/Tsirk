@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tsirk"
         mc:Ignorable="d"
-        Title="AdminWindow" Height="450" Width="800">
+        Title="AdminWindow" Height="700" Width="1200">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
@@ -58,6 +58,94 @@
            
             
             <Button Content="Добавить" Background="Azure" BorderThickness="1" BorderBrush="Aquamarine" Name="signup" Click="signup_Click"></Button>
+
+            <ListView Name="users_list"  Height="160" Margin="00,10" FontSize="12">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=Id}" Width="0">id</GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=Name}"  Width="100">Имя</GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=Last_name}" Width="100">Фамилия</GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=Role}"  Width="170">Роль</GridViewColumn>
+                    </GridView>
+                </ListView.View>
+
+            </ListView>
+
+            
+            <Button Content="Выбрать" Background="Azure" BorderThickness="1" BorderBrush="Aquamarine" Name="select_user" Click="select_user_Click" Margin="0,10"></Button>
+            <Button Content="Удалить" Background="PaleVioletRed" BorderThickness="1" BorderBrush="Red" Name="delete_user" Click="delete_user_Click" ></Button>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1"  HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label Content="Добавить вальер" HorizontalAlignment="Center"></Label>
+            <Grid Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Content="Название" Grid.Column="0"></Label>
+                <TextBox x:Name="aviary_title_box" Width="150" Grid.Column="1" BorderThickness="1" BorderBrush="Aquamarine"></TextBox>
+            </Grid>
+
+
+            <Button Content="Добавить" Background="Azure" BorderThickness="1" BorderBrush="Aquamarine" Name="add_aviary" Click="add_aviary_Click"></Button>
+
+            <ListView Name="aviarys_list"  Height="140" Margin="00,10" FontSize="12">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=id}" Width="0">id</GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=title}"  Width="220">Название</GridViewColumn>
+
+                    </GridView>
+                </ListView.View>
+
+            </ListView>
+
+
+
+            <Button Content="Удалить" Background="PaleVioletRed" BorderThickness="1" BorderBrush="Red" Name="delete_aviary" Click="delete_aviary_Click" ></Button>
+
+            <Label Content="Добавить животное" HorizontalAlignment="Center" Margin="0,20,0,0"></Label>
+            <Grid Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Content="Животное" Grid.Column="0"></Label>
+                <TextBox x:Name="animal_box" Width="150" Grid.Column="1" BorderThickness="1" BorderBrush="Aquamarine"></TextBox>
+            </Grid>
+            <Grid Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Content="Вольер" Grid.Column="0"></Label>
+                <ComboBox x:Name="aviary_box" Width="100" Grid.Column="1" BorderThickness="1" BorderBrush="Aquamarine" Background="White" DisplayMemberPath="title" SelectedValuePath="id"></ComboBox>
+            </Grid>
+
+            <Button Content="Добавить" Background="Azure" BorderThickness="1" BorderBrush="Aquamarine" Name="add_animal" Click="add_animal_Click"></Button>
+
+            <ListView Name="animals_list"  Height="140" Margin="00,10" FontSize="12">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=Id}" Width="0">id</GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=Name}"  Width="100">Животное</GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=Aviary}" Width="100">Вальер</GridViewColumn>
+                    </GridView>
+                </ListView.View>
+
+            </ListView>
+
+
+
+            <Button Content="Удалить" Background="PaleVioletRed" BorderThickness="1" BorderBrush="Red" Name="delete_animal" Click="delete_animal_Click" ></Button>
+
+        </StackPanel>
+
+        <StackPanel Grid.Column="2"  HorizontalAlignment="Center" VerticalAlignment="Center">
+            
+        
+
         </StackPanel>
     </Grid>
 </Window>

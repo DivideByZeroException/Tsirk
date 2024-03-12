@@ -15,14 +15,13 @@ using System.Windows.Shapes;
 namespace Tsirk
 {
     /// <summary>
-    /// Логика взаимодействия для ActorWindow.xaml
+    /// Interaction logic for WorkerProfile.xaml
     /// </summary>
-    public partial class ActorWindow : Window
+    public partial class WorkerProfile : Window
     {
-        public ActorWindow()
+        public WorkerProfile()
         {
             InitializeComponent();
-    
         }
     }
 }
